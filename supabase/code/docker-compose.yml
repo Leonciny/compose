@@ -356,6 +356,8 @@ services:
   db:
     image: supabase/postgres:15.8.1.060
     restart: unless-stopped
+    networks:
+      - internal-net
     volumes:
       - ./volumes/db/realtime.sql:/docker-entrypoint-initdb.d/migrations/99-realtime.sql:Z
       # Must be superuser to create event trigger
@@ -478,3 +480,7 @@ services:
 
 volumes:
   db-config:
+
+networks:
+  internal-net:
+    external: true
