@@ -32,7 +32,7 @@ services:
     environment:
       STUDIO_PG_META_URL: http://meta:8080
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-
+auth
       DEFAULT_ORGANIZATION_NAME: ${STUDIO_DEFAULT_ORGANIZATION}
       DEFAULT_PROJECT_NAME: ${STUDIO_DEFAULT_PROJECT}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
@@ -125,6 +125,11 @@ services:
       GOTRUE_EXTERNAL_EMAIL_ENABLED: ${ENABLE_EMAIL_SIGNUP}
       GOTRUE_EXTERNAL_ANONYMOUS_USERS_ENABLED: ${ENABLE_ANONYMOUS_USERS}
       GOTRUE_MAILER_AUTOCONFIRM: ${ENABLE_EMAIL_AUTOCONFIRM}
+
+      
+      GOTRUE_MAILER_TEMPLATES_CONFIRMATION: "/usr/local/etc/gotrue/templates/confirm.html"
+      GOTRUE_MAILER_TEMPLATES_RECOVERY: "/usr/local/etc/gotrue/templates/recovery.html"
+      GOTRUE_MAILER_TEMPLATES_MAGIC_LINK: "/usr/local/etc/gotrue/templates/magic_link.html"
 
       # Uncomment to bypass nonce check in ID Token flow. Commonly set to true when using Google Sign In on mobile.
       # GOTRUE_EXTERNAL_SKIP_NONCE_CHECK: true
