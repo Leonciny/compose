@@ -81,6 +81,8 @@ services:
   auth:
     image: supabase/gotrue:v2.172.1
     restart: unless-stopped
+    volumes:
+      - /home/cs2vps/supabase-templates:/usr/local/etc/gotrue/templates:ro
     networks:
       - internal-net
     healthcheck:
