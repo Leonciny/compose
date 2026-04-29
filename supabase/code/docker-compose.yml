@@ -80,8 +80,8 @@ services:
   auth:
     image: supabase/gotrue:v2.172.1
     restart: unless-stopped
-    volumes:
-      - /home/cs2vps/supabase-templates:/usr/local/etc/gotrue/templates:ro
+    #volumes:
+    #  - /home/cs2vps/supabase-templates:/usr/local/etc/gotrue/templates:ro
     networks:
       - internal-net
     healthcheck:
@@ -124,6 +124,18 @@ services:
       GOTRUE_EXTERNAL_EMAIL_ENABLED: ${ENABLE_EMAIL_SIGNUP}
       GOTRUE_EXTERNAL_ANONYMOUS_USERS_ENABLED: ${ENABLE_ANONYMOUS_USERS}
       GOTRUE_MAILER_AUTOCONFIRM: ${ENABLE_EMAIL_AUTOCONFIRM}
+
+
+      GOTRUE_MAILER_TEMPLATES_CONFIRMATION: https://smoketesthub.corespark.cloud/email-templates/confirm.html
+      GOTRUE_MAILER_TEMPLATES_RECOVERY:     https://smoketesthub.corespark.cloud/email-templates/recovery.html
+      GOTRUE_MAILER_TEMPLATES_MAGIC_LINK:   https://smoketesthub.corespark.cloud/email-templates/magic_link.html
+
+
+      GOTRUE_MAILER_SUBJECTS_CONFIRMATION:  "Conferma il tuo account — Smoke Test Hub"
+      GOTRUE_MAILER_SUBJECTS_MAGIC_LINK:    "Il tuo link di accesso — Smoke Test Hub"
+      GOTRUE_MAILER_SUBJECTS_RECOVERY:      "Reimposta la password — Smoke Test Hub"
+      GOTRUE_MAILER_SUBJECTS_INVITE:        "Sei stato invitato — Smoke Test Hub"
+      GOTRUE_MAILER_SUBJECTS_EMAIL_CHANGE:  "Conferma il cambio email — Smoke Test Hub"
 
       
       GOTRUE_MAILER_TEMPLATES_CONFIRMATION: /usr/local/etc/gotrue/templates/confirm.html
