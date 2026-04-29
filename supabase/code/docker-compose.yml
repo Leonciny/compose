@@ -138,9 +138,9 @@ services:
       GOTRUE_MAILER_SUBJECTS_EMAIL_CHANGE:  "Conferma il cambio email — Smoke Test Hub"
 
       
-      GOTRUE_MAILER_TEMPLATES_CONFIRMATION: /usr/local/etc/gotrue/templates/confirm.html
-      GOTRUE_MAILER_TEMPLATES_RECOVERY: /usr/local/etc/gotrue/templates/recovery.html
-      GOTRUE_MAILER_TEMPLATES_MAGIC_LINK: /usr/local/etc/gotrue/templates/magic_link.html
+      #GOTRUE_MAILER_TEMPLATES_CONFIRMATION: /usr/local/etc/gotrue/templates/confirm.html
+      #GOTRUE_MAILER_TEMPLATES_RECOVERY: /usr/local/etc/gotrue/templates/recovery.html
+      #GOTRUE_MAILER_TEMPLATES_MAGIC_LINK: /usr/local/etc/gotrue/templates/magic_link.html
 
       # Uncomment to bypass nonce check in ID Token flow. Commonly set to true when using Google Sign In on mobile.
       # GOTRUE_EXTERNAL_SKIP_NONCE_CHECK: true
